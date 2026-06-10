@@ -32,5 +32,5 @@ By analyzing over 5.5 Million rows of data, I identified key usage patterns and 
 3. **03 - Leisure loyalty programme 🏆:** For long‑ride casuals: every 5th ride free if they join as a member.Highlight “ride twice as long for half the price” messaging.
 
 ## 🔗 Links to Project Files
-*   [View the Interactive Tableau Dashboard Here]()
-*   [View the SQL Data Cleaning Queries Here]()
+*   [View the Interactive Tableau Dashboard Here](https://public.tableau.com/views/GoogleDataAnalyticsCapstoneProject-Cyclisticbikeuserbehavior/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+*   [View the SQL Data Cleaning Queries Here](3.4._Process_Analyze)
