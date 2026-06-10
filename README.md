@@ -33,4 +33,4 @@ By analyzing over 5.5 Million rows of data, I identified key usage patterns and 
 
 ## 🔗 Links to Project Files
 *   [View the Interactive Tableau Dashboard Here](https://public.tableau.com/views/GoogleDataAnalyticsCapstoneProject-Cyclisticbikeuserbehavior/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-*   [View the SQL Data Cleaning Queries Here](3.4._Process_Analyze)
+*   [View the SQL Data Cleaning Queries Here](3.-4._Process_Analyze)
