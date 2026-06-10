@@ -1,33 +1,38 @@
 1. Data Location
-   The primary [[historical data]]set is publicly available and hosted online. The data is stored in a public **Amazon Web Services (AWS) Simple Storage Service (S3) bucket**. It can be accessed directly via the [Divvy Tripdata Index Link](https://divvy-tripdata.s3.amazonaws.com/index.html). 
+   The primary historical data set is publicly available and hosted online. The data is stored in a public **Amazon Web Services (AWS) Simple Storage Service (S3) bucket**. It can be accessed directly via the [Divvy Tripdata Index Link](https://divvy-tripdata.s3.amazonaws.com/index.html). 
+   
 2. Data organiztion
-   **~={cyan}Storage Format=~:** The files are compressed into `.zip` archives. Once extracted, they contain data structured in standard **Comma-Separated Values (.csv)** format. [[1](https://www.egy.ee/projects/02_divvy)
-   ~={cyan}**Data Organization:**=~ The historical data is organized chronologically. Newer entries (from 2020 onward) are provided as **monthly datasets**, while older historical records are grouped by **fiscal quarters**.
+   **Storage Format:** The files are compressed into `.zip` archives. Once extracted, they contain data structured in standard **Comma-Separated Values (.csv)** format. [[1](https://www.egy.ee/projects/02_divvy)
+   **Data Organization:** The historical data is organized chronologically. Newer entries (from 2020 onward) are provided as **monthly datasets**, while older historical records are grouped by **fiscal quarters**.
+   
 3. Biases and credibility - ROCCC status.
-   ~={cyan}**Low Bias Risk:**=~ Because this dataset consists of automated, system-generated trip logs collected directly from the bicycle docks and mobile apps, it eliminates human survey bias or self-reporting errors. It represents the complete census of all rides taken, rather than a selected sample.
-   ~={cyan}**Potential Selection Bias:**=~ A small degree of selection bias exists because the data only tracks people who already use bike-sharing services. It does not capture why non-users choose other transit methods, which means our conclusions apply strictly to existing Cyclistic users.
-   ~={cyan}**Credibility:**=~ The data is highly credible. It is first-party data collected and published directly by the system operator (Motivate International Inc.) in partnership with the City of Chicago.
-   ~={yellow}Does the data ROCCC?=~
-   ~={cyan}**R - Reliable? (YES):**=~ The data is reliable because it is automatically logged by GPS and docking station hardware. The sample size is massive (millions of rides per year), making the findings statistically significant.
-   ~={cyan}**O - Original? (YES):**=~ This is first-party data. It comes directly from the source—the company operating the physical bike network and booking apps—rather than being aggregated or scraped by a third party.
-   ~={cyan}**C - Comprehensive? (YES/PARTIALLY):**=~
-    ~={green}-_Yes:=~_ It is comprehensive regarding usage behavior (it includes every single trip timestamp, duration, station location, and bike type).
-    ~={green}-Partially:=~_ It lacks broader contextual data. Due to privacy laws, it excludes user demographics (age, gender) and individual user IDs. We cannot track if a single casual rider takes 50 trips a year or just one.
-	~={cyan}**C - Current? (YES):**=~ The AWS repository is updated on a monthly basis. By selecting the most recent 12 consecutive months of data for this analysis, the insights reflect modern, post-pandemic commuting habits.
+   **Low Bias Risk:** Because this dataset consists of automated, system-generated trip logs collected directly from the bicycle docks and mobile apps, it eliminates human survey bias or self-reporting errors. It represents the complete census of all rides taken, rather than a selected sample.
+   **Potential Selection Bias: A small degree of selection bias exists because the data only tracks people who already use bike-sharing services. It does not capture why non-users choose other transit methods, which means our conclusions apply strictly to existing Cyclistic users.
+   **Credibility: The data is highly credible. It is first-party data collected and published directly by the system operator (Motivate International Inc.) in partnership with the City of Chicago.
+   Does the data ROCCC?
+   **R - Reliable? (YES):** The data is reliable because it is automatically logged by GPS and docking station hardware. The sample size is massive (millions of rides per year), making the findings statistically significant.
+   **O - Original? (YES):** This is first-party data. It comes directly from the source—the company operating the physical bike network and booking apps—rather than being aggregated or scraped by a third party.
+   {cyan}**C - Comprehensive? (YES/PARTIALLY):**
+    -_Yes:_ It is comprehensive regarding usage behavior (it includes every single trip timestamp, duration, station location, and bike type).
+    -Partially:_ It lacks broader contextual data. Due to privacy laws, it excludes user demographics (age, gender) and individual user IDs. We cannot track if a single casual rider takes 50 trips a year or just one.
+	**C - Current? (YES):** The AWS repository is updated on a monthly basis. By selecting the most recent 12 consecutive months of data for this analysis, the insights reflect modern, post-pandemic commuting habits.
+	
 4. Licensing, Privacy, Security, and Accessibility
    The dataset represents real-world trip logs generated by Chicago's Divvy bike-sharing system. 
-   ~={cyan}**Licensing:**=~ For the purpose of this capstone case study, the data has been made available by Motivate International Inc. under the official [Divvy Data License Agreement](https://divvybikes.com/data-license-agreement). This agreement grants a non-exclusive, royalty-free license to access, use, and analyze the data for research and project purposes.
-   ~={cyan}**Privacy:**=~ Highest data privacy standards are maintained. The dataset **completely excludes personally identifiable information ([[PII]])**. You cannot see names, credit card numbers, or home addresses. This ensures compliance with privacy frameworks but ~={yellow}prevents us from determining if casual riders live in the service area or are repeating customers=~.
-   ~={cyan}**Security:**=~ Downloaded raw data files are stored securely on a local machine or a private cloud environment (e.g., a private Kaggle workspace or password-protected cloud drive). Original `.csv` files are kept untouched as an unedited "single source of truth" backup to maintain security and prevent accidental corruption.
-   ~={cyan}**Accessibility**:=~ Data is highly accessible because it is organized in [[Structured data|structured]] `.csv` file formats that can easily be ingested by any major analytical software (e.g., **Excel/Sheets**, **SQL**, **R**, **Python**, or **Tableau**).
+   **Licensing:** For the purpose of this capstone case study, the data has been made available by Motivate International Inc. under the official [Divvy Data License Agreement](https://divvybikes.com/data-license-agreement). This agreement grants a non-exclusive, royalty-free license to access, use, and analyze the data for research and project purposes.
+   **Privacy:** Highest data privacy standards are maintained. The dataset **completely excludes personally identifiable information (PII)**. You cannot see names, credit card numbers, or home addresses. This ensures compliance with privacy frameworks but ~={yellow}prevents us from determining if casual riders live in the service area or are repeating customers.
+   **Security:** Downloaded raw data files are stored securely on a local machine or a private cloud environment (e.g., a private Kaggle workspace or password-protected cloud drive). Original `.csv` files are kept untouched as an unedited "single source of truth" backup to maintain security and prevent accidental corruption.
+   **Accessibility**: Data is highly accessible because it is organized in structured `.csv` file formats that can easily be ingested by any major analytical software (e.g., **Excel/Sheets**, **SQL**, **R**, **Python**, or **Tableau**).
+   
 5. Data’s integrity Verification
-   ~={cyan}**Schema Consistency**:=~ I cross-checked that every monthly/quarterly `.csv` file contains the exact same column names, data types, and ordering (e.g., confirming `ride_id` is always a string/character type and timestamps match standard `YYYY-MM-DD HH:MM:SS` conventions)
-   ~={cyan}**Key Validation**:=~ I checked that primary keys (`ride_id`) are unique and do not contain duplicates. For modern Divvy data, I verified that `ride_id` strings maintain a consistent length (e.g., 16 characters).
-   ~={cyan}**Boundary & Range Checks**:=~ I checked that geographic variables (`start_lat`, `start_lng`) fall strictly within the expected coordinates for the broader Chicago metropolitan area.
-   ~={cyan}**Chronological Order**:=~ I scanned the start and end timestamps to verify that end times occur _after_ start times, highlighting any anomalies to clean later.
+   **Schema Consistency**: I cross-checked that every monthly/quarterly `.csv` file contains the exact same column names, data types, and ordering (e.g., confirming `ride_id` is always a string/character type and timestamps match standard `YYYY-MM-DD HH:MM:SS` conventions)
+   **Key Validation**: I checked that primary keys (`ride_id`) are unique and do not contain duplicates. For modern Divvy data, I verified that `ride_id` strings maintain a consistent length (e.g., 16 characters).
+   **Boundary & Range Checks**: I checked that geographic variables (`start_lat`, `start_lng`) fall strictly within the expected coordinates for the broader Chicago metropolitan area.
+   **Chronological Order**: I scanned the start and end timestamps to verify that end times occur _after_ start times, highlighting any anomalies to clean later.
+   
 6. Problems with the data
-   ~={cyan}**Missing Data (Null Values)**:=~ There is a noticeable percentage of missing entries in the `start_station_name`, `end_station_name`, and their corresponding IDs.
-   ~={cyan}**Data Anomalies (Negative/Zero Durations)**:=~ 
+   **Missing Data (Null Values)**: There is a noticeable percentage of missing entries in the `start_station_name`, `end_station_name`, and their corresponding IDs.
+   **Data Anomalies (Negative/Zero Durations)**: 
    - Some test rows or system errors exist where the `ended_at` timestamp occurs _before_ the `started_at` timestamp, or the trip duration is less than a minute. These represent invalid data and must be filtered out.
    - 202505-divvy-tripdata presents several cases of non-numeric data types in the `start_lat`, `start_lng`, `end_lat`, `end_lng` fields. 
    - The `end_station_id` and `start_station_id` contain either numerical data or string data. 
