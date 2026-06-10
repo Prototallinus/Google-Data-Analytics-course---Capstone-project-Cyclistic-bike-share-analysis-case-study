@@ -16,9 +16,9 @@
 
    **Low Bias Risk:** Because this dataset consists of automated, system-generated trip logs collected directly from the bicycle docks and mobile apps, it eliminates human survey bias or self-reporting errors. It represents the complete census of all rides taken, rather than a selected sample.
 
-   **Potential Selection Bias: A small degree of selection bias exists because the data only tracks people who already use bike-sharing services. It does not capture why non-users choose other transit methods, which means our conclusions apply strictly to existing Cyclistic users.
+   **Potential Selection Bias**: A small degree of selection bias exists because the data only tracks people who already use bike-sharing services. It does not capture why non-users choose other transit methods, which means our conclusions apply strictly to existing Cyclistic users.
 
-   **Credibility: The data is highly credible. It is first-party data collected and published directly by the system operator (Motivate International Inc.) in partnership with the City of Chicago.
+   **Credibility**: The data is highly credible. It is first-party data collected and published directly by the system operator (Motivate International Inc.) in partnership with the City of Chicago.
    Does the data ROCCC?
 
    **R - Reliable? (YES):** The data is reliable because it is automatically logged by GPS and docking station hardware. The sample size is massive (millions of rides per year), making the findings statistically significant.
