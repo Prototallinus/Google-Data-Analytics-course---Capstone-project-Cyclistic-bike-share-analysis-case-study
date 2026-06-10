@@ -2,7 +2,7 @@
 **Author:** Luigi Tallarico | Business & Data Analyst  
 **Date:** June 2026 | **Tools Used:** SQL (BigQuery), Tableau, Google Sheets, Google Slides.
 
-**
+*<img width="1199" height="1199" alt="Dashboard 1" src="https://github.com/user-attachments/assets/40dd370c-a7d8-4ffa-9ba1-56b16fe8d166" />*
 
 ## 📊 Executive Summary
 The goal of this project is to analyze historical bike-trip data for "Cyclistic" (a fictional bike-share company in Chicago) to understand the behavioral differences between **Casual Riders** and **Annual Members**. The ultimate business objective is to design a targeted marketing strategy to convert casual riders into profitable annual members. 
