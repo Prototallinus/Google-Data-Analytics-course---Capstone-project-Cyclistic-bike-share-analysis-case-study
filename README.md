@@ -16,7 +16,7 @@ By analyzing over 5.5 Million rows of data, I identified key usage patterns and 
 
 ## 🛠️ Data Preparation & Processing
 *   **Data Source:** 12 months of historical trip data (public dataset).
-*   **Data Cleaning (SQL):** 
+*   **Data Cleaning and Analysis (SQL):** 
     *   Removed null values and duplicates.
     *   Filtered out trips with negative duration or duration less than 60 seconds.
     *   Created new calculated fields: `ride_length` and `day_of_week`, `month_start_number`,`season`.
